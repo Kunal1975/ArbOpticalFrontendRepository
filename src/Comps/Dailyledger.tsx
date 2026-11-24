@@ -66,9 +66,9 @@ const DailyLedger:React.FC=()=>{
     
         fetchBalance(); // Call the function inside useEffect
         resetinput();
-        const isModalOpen = localStorage.getItem("showModal") === "true";
-        if (isModalOpen) {
-          setShow(true);
+      //  const isModalOpen = localStorage.getItem("showModal") === "true";
+      //  if (isModalOpen) {
+      //    setShow(true);
         }
       }, []); 
       
@@ -130,8 +130,7 @@ const DailyLedger:React.FC=()=>{
 };
       const showmodal=()=>{
        
-        localStorage.setItem("showModal", "true");
-        Windows.location.reload();
+        setShow(true);
       };
      const viewStatement=async()=>{
       let url3=config.Serviceurl.DailyledgerDsiplay;
