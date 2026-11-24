@@ -1,5 +1,5 @@
 import React, {  useEffect, useRef, useState } from 'react';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import DeskTop from './DeskTop';
 import config  from "../Configsettings/appsettings.json"
 import axios from 'axios';
@@ -66,10 +66,6 @@ const DailyLedger:React.FC=()=>{
     
         fetchBalance(); // Call the function inside useEffect
         resetinput();
-      //  const isModalOpen = localStorage.getItem("showModal") === "true";
-      //  if (isModalOpen) {
-      //    setShow(true);
-        }
       }, []); 
       
       const SaveLedger=async()=>{
@@ -128,10 +124,7 @@ const DailyLedger:React.FC=()=>{
 
   return `${day < 10 ? '0' + day : day}-${month < 10 ? '0' + month : month}-${year}`;
 };
-      const showmodal=()=>{
-       
-        setShow(true);
-      };
+      const showmodal = () => setShow(true);
      const viewStatement=async()=>{
       let url3=config.Serviceurl.DailyledgerDsiplay;
       const fdate=(document.getElementById("frmdte") as HTMLInputElement).value;
@@ -243,8 +236,8 @@ return(
        </div>
        <div className="row" style={{marginTop:"1%"}}>
         <div className="d-flex justify-content-center align-items-center ">
-        <button className='btn btn-primary' id="btnsave" name="btncreate" style={{marginBottom:"1%"}} onClick={SaveLedger}>Save Ledger</button>
-        <button className='btn btn-primary'  id="btnreset" name="btnreset"  style={{marginLeft:"2%",marginBottom:"1%"}} onClick={resetinput}>Reset</button>
+        <button type="button" className='btn btn-primary' id="btnsave" name="btncreate" style={{marginBottom:"1%"}} onClick={SaveLedger}>Save Ledger</button>
+        <button type="button" className='btn btn-primary'  id="btnreset" name="btnreset"  style={{marginLeft:"2%",marginBottom:"1%"}} onClick={resetinput}>Reset</button>
         <button type="button" className='btn btn-primary' id="btnStatement" name="btncreate" style={{marginLeft:"2%",marginBottom:"1%"}} onClick={showmodal}>View Statement</button>
         </div>
       </div>
@@ -340,13 +333,7 @@ return(
       <span style={{fontSize:"10px"}}>Debit</span>
     </div>
   </div>
-
-            
-       
-          <button className='btn btn-secondary' onClick={() => {
-       setShow(false);
-        localStorage.removeItem("showModal");
-        }}>Close</button>
+         <button type="button" className='btn btn-secondary' onClick={() => setShow(false)}>Close</button>
         </Modal.Footer>
         </Modal>
        </>
