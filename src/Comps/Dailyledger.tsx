@@ -246,7 +246,7 @@ return(
         <div className="d-flex justify-content-center align-items-center ">
         <button className='btn btn-primary' id="btnsave" name="btncreate" style={{marginBottom:"1%"}} onClick={SaveLedger}>Save Ledger</button>
         <button className='btn btn-primary'  id="btnreset" name="btnreset"  style={{marginLeft:"2%",marginBottom:"1%"}} onClick={resetinput}>Reset</button>
-        <button className='btn btn-primary' id="btnStatement" name="btncreate" style={{marginLeft:"2%",marginBottom:"1%"}} onClick={showmodal}>View Statement</button>
+        <button type="button" className='btn btn-primary' id="btnStatement" name="btncreate" style={{marginLeft:"2%",marginBottom:"1%"}} onClick={showmodal}>View Statement</button>
         </div>
       </div>
       
