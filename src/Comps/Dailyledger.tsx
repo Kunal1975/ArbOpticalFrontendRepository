@@ -131,7 +131,7 @@ const DailyLedger:React.FC=()=>{
       const showmodal=()=>{
        
         localStorage.setItem("showModal", "true");
-       
+        Windows.location.reload();
       };
      const viewStatement=async()=>{
       let url3=config.Serviceurl.DailyledgerDsiplay;
